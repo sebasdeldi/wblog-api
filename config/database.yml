@@ -20,6 +20,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch('DB_USERNAME', 'wblog-api') %>
+  password: <%= ENV.fetch('DB_PASSWORD', 'wblog-api') %>
 
 development:
   <<: *default
@@ -81,5 +83,3 @@ test:
 production:
   <<: *default
   database: wblog-api_production
-  username: wblog-api
-  password: <%= ENV['WBLOG-API_DATABASE_PASSWORD'] %>

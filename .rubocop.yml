@@ -1,0 +1,11 @@
+Documentation:
+  Enabled: false
+
+LineLength:
+  Max: 99
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false

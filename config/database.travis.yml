@@ -1,0 +1,5 @@
+test: &test
+  adapter: postgresql
+  encoding: utf8
+  database: wblog-api_test
+  username: postgres

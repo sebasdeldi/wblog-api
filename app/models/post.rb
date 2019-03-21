@@ -4,4 +4,6 @@ class Post < ApplicationRecord
   has_many :reblogs, dependent: :destroy
   has_many :likes, dependent: :destroy
   validates :user, :title, :description, :status, presence: true
+  validates :description, length: { maximum: 400 }
+  validates :title, uniqueness: true
 end

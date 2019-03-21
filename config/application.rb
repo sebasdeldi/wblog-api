@@ -11,6 +11,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
+require "active_model_serializers"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -29,7 +30,7 @@ module WblogApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-
+    config.middleware.use ActionDispatch::Flash
     # Mailer configuration
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {

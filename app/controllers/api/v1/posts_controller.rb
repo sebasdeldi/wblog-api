@@ -15,10 +15,10 @@ module Api
 
       def create
         post = Post.new(post_params)
-        if post.save!
+        if post.save
           render json: post, status: :created, serializer: Api::V1::PostSerializer
         else
-          render json: { errors: post.erros }, status: :precondition_failed
+          render json: { errors: post.errors }, status: :precondition_failed
         end
       end
 

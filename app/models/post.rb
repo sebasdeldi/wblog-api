@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
-  enum status: { public: 0, private: 1 }
+  enum status: { free_access: 0, restricted_access: 1 }
   has_many :reblogs, dependent: :destroy
   has_many :likes, dependent: :destroy
+  validates :user, :title, :description, :status, presence: true
 end

@@ -28,6 +28,23 @@
   * Params:
     * id (user's id)
 
+### Posts
+* Create a post: /api/v1/posts
+  * Type: POST
+  * Params:
+    * title (mandatory)
+    * description (mandatory)
+    * user_id (mandatory)
+    * status (optional, 0 by default (0 = free_access))
+
+* List all posts: /api/v1/posts
+  * Type: GET
+
+* List a specific user: /api/v1/posts/:id
+  * Type: GET
+  * Params:
+    * id (post's id)
+
 
 ### Run Specs
 * `$ rspec` inside project's folder

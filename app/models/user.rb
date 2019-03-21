@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :reblogs, dependent: :destroy
   has_many :likes, dependent: :destroy
+  before_save :skip_confirmation!
   after_save :send_greeting_email
 
   scope :by_name, ->(name) { where('lower(name) = ?', name.downcase) }

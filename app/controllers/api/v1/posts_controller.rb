@@ -4,10 +4,12 @@ module Api
       before_action :authenticate_user!
 
       def index
-        render_paginated Post.all, each_serializer: Api::V1::PostSerializer
+        render_paginated Post.where(user: current_user).or(Post.where(status: 'free_access')),
+                         each_serializer: Api::V1::PostSerializer
       end
 
       def show
+        authorize post
         render json: post
       end
 

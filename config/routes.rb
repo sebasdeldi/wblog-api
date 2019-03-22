@@ -6,6 +6,11 @@ Rails.application.routes.draw do
       resources :posts, only: [:index, :show, :create, :update]
       resources :likes, only: [:create]
       resources :reblogs, only: [:create]
+      resources :xkcd_requests, only: [:import] do
+        collection do
+          get :import 
+        end
+      end
     end
   end
 

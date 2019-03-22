@@ -52,6 +52,13 @@
     * description (optional)
     * status (optional, 0 = free_access or 1 = restricted_access)
 
+### Likes
+* Create a post: /api/v1/likes
+  * Type: POST
+  * Params:
+    * user_id (mandatory)
+    * post_id (mandatory)
+
 ### Run Specs
 * `$ rspec` inside project's folder
 

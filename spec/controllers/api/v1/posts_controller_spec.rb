@@ -60,8 +60,11 @@ describe Api::V1::PostsController, type: :controller do
 
     context 'When creating an invalid post' do
       let(:posting) { attributes_for(:post, title: nil) }
+      include_examples 'error message examples'
 
-      include_examples 'create error examples'
+      it "doesn't create a new post" do
+        expect { http_request }.to change { Post.count }.by(0)
+      end
 
       it 'responds with unprocessable_entity status' do
         http_request

@@ -10,8 +10,5 @@ shared_examples 'update error examples' do
     expect(response).to have_http_status(:precondition_failed)
   end
 
-  it 'returns error messages' do
-    http_request
-    expect(response.body['error']).to be_present
-  end
+  include_examples 'error message examples'
 end

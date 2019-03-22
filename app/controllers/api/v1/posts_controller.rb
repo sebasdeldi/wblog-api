@@ -22,6 +22,14 @@ module Api
         end
       end
 
+      def update
+        if post.update(update_params)
+          render json: post, status: :created, serializer: Api::V1::PostSerializer
+        else
+          render json: { errors: post.errors }, status: :precondition_failed
+        end
+      end
+
       private
 
       def post
@@ -30,6 +38,10 @@ module Api
 
       def post_params
         params.require(:post).permit(:title, :description, :status, :user_id)
+      end
+
+      def update_params
+        params.require(:post).permit(:description, :status)
       end
     end
   end

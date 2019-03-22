@@ -66,6 +66,12 @@
     * user_id (mandatory)
     * post_id (mandatory)
 
+### Import comics from XKCD
+* Import a specific comic from XKCD: /api/v1/xkcd_requests/import
+  * Type: GET
+  * Params:
+    * comic_id (comic's id in XKCD)
+
 ### Run Specs
 * `$ rspec` inside project's folder
 

@@ -45,6 +45,12 @@
   * Params:
     * id (post's id)
 
+* List a specific user: /api/v1/posts/:id
+  * Type: PUT
+  * Params:
+    * id (post's id)
+    * description (optional)
+    * status (optional, 0 = free_access or 1 = restricted_access)
 
 ### Run Specs
 * `$ rspec` inside project's folder

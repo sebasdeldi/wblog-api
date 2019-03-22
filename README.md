@@ -59,6 +59,13 @@
     * user_id (mandatory)
     * post_id (mandatory)
 
+### Reblogs
+* Create a post: /api/v1/reblogs
+  * Type: POST
+  * Params:
+    * user_id (mandatory)
+    * post_id (mandatory)
+
 ### Run Specs
 * `$ rspec` inside project's folder
 

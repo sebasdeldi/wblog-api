@@ -61,12 +61,45 @@ describe Api::V1::PostsController, type: :controller do
     context 'When creating an invalid post' do
       let(:posting) { attributes_for(:post, title: nil) }
 
-      include_examples 'error examples'
+      include_examples 'create error examples'
 
       it 'responds with unprocessable_entity status' do
         http_request
         expect(response).to have_http_status(:precondition_failed)
       end
+    end
+  end
+
+  describe 'PUT #update' do
+    let(:post) { create(:post) }
+    subject(:http_request) { put :update, params: { id: post.id, post: { description: desc, status: stat } } }
+
+    context 'When updating a valid post' do
+      let(:desc) { 'new description' }
+      let(:stat) { 'free_access' }
+
+      it 'updates a post' do
+        before_update = [post.description, post.status]
+        http_request
+        expect(before_update).to_not eq [post.reload.description, post.reload.status]
+      end
+
+      it 'responds with updated status' do
+        http_request
+        expect(response).to have_http_status(201)
+      end
+    end
+
+    context 'When updating a post with invalid description' do
+      let(:desc) { ' ' }
+      let(:stat) { 'free_access' }
+      include_examples 'update error examples'
+    end
+
+    context 'When updating a post with invalid status' do
+      let(:desc) { 'new description' }
+      let(:stat) { ' ' }
+      include_examples 'update error examples'
     end
   end
 end

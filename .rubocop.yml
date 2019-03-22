@@ -2,7 +2,7 @@ Documentation:
   Enabled: false
 
 LineLength:
-  Max: 99
+  Max: 120
 
 Metrics/ModuleLength:
   Enabled: false

@@ -1,4 +1,4 @@
-shared_examples 'error examples' do
+shared_examples 'create error examples' do
   it 'returns error messages' do
     http_request
     expect(response.body['error']).to be_present

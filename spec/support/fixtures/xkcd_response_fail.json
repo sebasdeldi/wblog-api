@@ -1,0 +1,41 @@
+{  
+  "server":[  
+    "nginx"
+  ],
+  "content-type":[  
+    "text/html; charset=UTF-8"
+  ],
+  "content-length":[  
+    "123"
+  ],
+  "accept-ranges":[  
+    "bytes"
+  ],
+  "date":[  
+    "Fri, 22 Mar 2019 19:09:46 GMT"
+  ],
+  "via":[  
+    "1.1 varnish"
+  ],
+  "age":[  
+    "904"
+  ],
+  "connection":[  
+    "close"
+  ],
+  "x-served-by":[  
+    "cache-mia17622-MIA"
+  ],
+  "x-cache":[  
+    "HIT"
+  ],
+  "x-cache-hits":[  
+    "1"
+  ],
+  "x-timer":[  
+    "S1553281786.311433,VS0,VE0"
+  ],
+  "vary":[  
+    "Accept-Encoding"
+  ]
+}
